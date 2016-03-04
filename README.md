@@ -1,2 +1,0 @@
-# fixedsidebar
-*A javascript demo.*
