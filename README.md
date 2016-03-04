@@ -1,2 +1,2 @@
-# page-scroll-fix-sidebar
- *A javascript demo.*
+# fixedsidebar
+*A javascript demo.*
