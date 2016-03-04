@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.container {
+			width: 1000px;
+			margin: 0 auto;
+			/* border:1px solid red; */
+			min-height: 500px;
+			margin-top: 50px;
+			/* position: relative; */
+		}
+		.header{
+			position: fixed;
+			width: 100%;
+			height: 50px;
+			left: 0;
+			top: 0;
+			background-color: #123;
+			z-index: 999
+		}
+		.main {
+			width: 70%;
+			height: 2000px;
+			border:1px solid gray;
+			float: left;
+			display: inline-block;
+			background-image: url('006.jpg');
+		}
+		.side {
+			width: 281px;
+			height: 900px;
+			float: left;
+			display: inline-block;
+			background-image: url('018.jpg');
+		}
+	</style>
+</head>
+<body>
+	<div class="header"></div>
+	<div class="container">
+		<div class="main"></div>
+		<div class="side"></div>
+	</div>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+			var $window = $(window),
+				$side = $(".side");
+			$window.scroll(function(){
+				var scrollHeight = $window.scrollTop(),
+					windowHeight = $window.height(),
+					sideHeight = $side.height();
+					if (scrollHeight+windowHeight  >  sideHeight) {
+						$side.css({
+							position:"fixed",
+							/*right:0,*/
+							top: -( sideHeight -windowHeight)  // -（边栏的高度- 窗口高度）
+						});
+					}else{
+						$side.css({
+							position:"static"
+						});
+					}
+			});
+	</script>
+</body>
+</html>
